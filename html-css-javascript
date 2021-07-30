@@ -1,0 +1,778 @@
+<script>
+			window.addEventListener('load', playTetris);
+			var currentStatus = [];
+
+			function playTetris() {
+				var div1 = document.createElement('div');
+
+				div1.style.border = '1px solid';
+
+				div1.style.position = 'absolute';
+
+				div1.style.left = '120px';
+
+				div1.style.top = '0px';
+
+				div1.style.backgroundColor = 'yellow';
+
+				div1.style.height = '30px';
+
+				div1.style.width = '30px';
+
+				div1.style.visibility = 'hidden';
+
+				var div2 = document.createElement('div');
+
+				div2.style.border = '1px solid';
+
+				div2.style.position = 'absolute';
+
+				div2.style.left = '150px';
+
+				div2.style.top = '0px';
+
+				div2.style.backgroundColor = 'yellow';
+
+				div2.style.height = '30px';
+
+				div2.style.width = '30px';
+
+				div2.style.visibility = 'hidden';
+
+				var div3 = document.createElement('div');
+
+				div3.style.border = '1px solid';
+
+				div3.style.position = 'absolute';
+
+				div3.style.left = '120px';
+
+				div3.style.top = '30px';
+
+				div3.style.backgroundColor = 'yellow';
+
+				div3.style.height = '30px';
+
+				div3.style.width = '30px';
+
+				div3.style.visibility = 'hidden';
+
+				var div4 = document.createElement('div');
+
+				div4.style.border = '1px solid';
+
+				div4.style.position = 'absolute';
+
+				div4.style.left = '150px';
+
+				div4.style.top = '30px';
+
+				div4.style.backgroundColor = 'yellow';
+
+				div4.style.height = '30px';
+
+				div4.style.width = '30px';
+
+				div4.style.visibility = 'hidden';
+
+				var box = document.getElementById('box');
+
+				box.appendChild(div1);
+
+				box.appendChild(div2);
+
+				box.appendChild(div3);
+
+				box.appendChild(div4);
+
+				var shape = [div1, div2, div3, div4];
+
+				var div1 = document.createElement('div');
+
+				div1.style.border = '1px solid';
+
+				div1.style.position = 'absolute';
+
+				div1.style.left = '120px';
+
+				div1.style.top = '0px';
+
+				div1.style.backgroundColor = 'cyan';
+
+				div1.style.height = '30px';
+
+				div1.style.width = '30px';
+
+				div1.style.visibility = 'hidden';
+
+				var div2 = document.createElement('div');
+
+				div2.style.border = '1px solid';
+
+				div2.style.position = 'absolute';
+
+				div2.style.left = '120px';
+
+				div2.style.top = '30px';
+
+				div2.style.backgroundColor = 'cyan';
+
+				div2.style.height = '30px';
+
+				div2.style.width = '30px';
+
+				div2.style.visibility = 'hidden';
+
+				var div3 = document.createElement('div');
+
+				div3.style.border = '1px solid';
+
+				div3.style.position = 'absolute';
+
+				div3.style.left = '120px';
+
+				div3.style.top = '60px';
+
+				div3.style.backgroundColor = 'cyan';
+
+				div3.style.height = '30px';
+
+				div3.style.width = '30px';
+
+				div3.style.visibility = 'hidden';
+
+				var div4 = document.createElement('div');
+
+				div4.style.border = '1px solid';
+
+				div4.style.position = 'absolute';
+
+				div4.style.left = '120px';
+
+				div4.style.top = '90px';
+
+				div4.style.backgroundColor = 'cyan';
+
+				div4.style.height = '30px';
+
+				div4.style.width = '30px';
+
+				div4.style.visibility = 'hidden';
+
+				var box = document.getElementById('box');
+
+				box.appendChild(div1);
+
+				box.appendChild(div2);
+
+				box.appendChild(div3);
+
+				box.appendChild(div4);
+
+				var Ishape = [div1, div2, div3, div4];
+
+				var div1 = document.createElement('div');
+
+				div1.style.border = '1px solid';
+
+				div1.style.position = 'absolute';
+
+				div1.style.left = '90px';
+
+				div1.style.top = '0px';
+
+				div1.style.backgroundColor = 'green';
+
+				div1.style.height = '30px';
+
+				div1.style.width = '30px';
+
+				div1.style.visibility = 'hidden';
+
+				var div2 = document.createElement('div');
+
+				div2.style.border = '1px solid';
+
+				div2.style.position = 'absolute';
+
+				div2.style.left = '120px';
+
+				div2.style.top = '0px';
+
+				div2.style.backgroundColor = 'green';
+
+				div2.style.height = '30px';
+
+				div2.style.width = '30px';
+
+				div2.style.visibility = 'hidden';
+
+				var div3 = document.createElement('div');
+
+				div3.style.border = '1px solid';
+
+				div3.style.position = 'absolute';
+
+				div3.style.left = '120px';
+
+				div3.style.top = '30px';
+
+				div3.style.backgroundColor = 'green';
+
+				div3.style.height = '30px';
+
+				div3.style.width = '30px';
+
+				div3.style.visibility = 'hidden';
+
+				var div4 = document.createElement('div');
+
+				div4.style.border = '1px solid';
+
+				div4.style.position = 'absolute';
+
+				div4.style.left = '150px';
+
+				div4.style.top = '30px';
+
+				div4.style.backgroundColor = 'green';
+
+				div4.style.height = '30px';
+
+				div4.style.width = '30px';
+
+				div4.style.visibility = 'hidden';
+
+				var box = document.getElementById('box');
+
+				box.appendChild(div1);
+
+				box.appendChild(div2);
+
+				box.appendChild(div3);
+
+				box.appendChild(div4);
+
+				var Zshape = [div1, div2, div3, div4];
+
+				var div1 = document.createElement('div');
+
+				div1.style.border = '1px solid';
+
+				div1.style.position = 'absolute';
+
+				div1.style.left = '120px';
+
+				div1.style.top = '0px';
+
+				div1.style.backgroundColor = 'purple';
+
+				div1.style.height = '30px';
+
+				div1.style.width = '30px';
+
+				div1.style.visibility = 'hidden';
+
+				var div2 = document.createElement('div');
+
+				div2.style.border = '1px solid';
+
+				div2.style.position = 'absolute';
+
+				div2.style.left = '150px';
+
+				div2.style.top = '0px';
+
+				div2.style.backgroundColor = 'purple';
+
+				div2.style.height = '30px';
+
+				div2.style.width = '30px';
+
+				div2.style.visibility = 'hidden';
+
+				var div3 = document.createElement('div');
+
+				div3.style.border = '1px solid';
+
+				div3.style.position = 'absolute';
+
+				div3.style.left = '180px';
+
+				div3.style.top = '0px';
+
+				div3.style.backgroundColor = 'purple';
+
+				div3.style.height = '30px';
+
+				div3.style.width = '30px';
+
+				div3.style.visibility = 'hidden';
+
+				var div4 = document.createElement('div');
+
+				div4.style.border = '1px solid';
+
+				div4.style.position = 'absolute';
+
+				div4.style.left = '150px';
+
+				div4.style.top = '30px';
+
+				div4.style.backgroundColor = 'purple';
+
+				div4.style.height = '30px';
+
+				div4.style.width = '30px';
+
+				div4.style.visibility = 'hidden';
+
+				var box = document.getElementById('box');
+
+				box.appendChild(div1);
+
+				box.appendChild(div2);
+
+				box.appendChild(div3);
+
+				box.appendChild(div4);
+
+				var Tshape = [div1, div2, div3, div4];
+
+				var div1 = document.createElement('div');
+
+				div1.style.border = '1px solid';
+
+				div1.style.position = 'absolute';
+
+				div1.style.left = '120px';
+
+				div1.style.top = '0px';
+
+				div1.style.backgroundColor = 'orange';
+
+				div1.style.height = '30px';
+
+				div1.style.width = '30px';
+
+				div1.style.visibility = 'hidden';
+
+				var div2 = document.createElement('di');
+
+				div2.style.border = '1px solid';
+
+				div2.style.position = 'absolute';
+
+				div2.style.left = '120px';
+
+				div2.style.top = '30px';
+
+				div2.style.backgroundColor = 'orange';
+
+				div2.style.height = '30px';
+
+				div2.style.width = '30px';
+
+				div2.style.visibility = 'hidden';
+
+				var div3 = document.createElement('div');
+
+				div3.style.border = '1px solid';
+
+				div3.style.position = 'absolute';
+
+				div3.style.left = '120px';
+
+				div3.style.top = '60px';
+
+				div3.style.backgroundColor = 'orange';
+
+				div3.style.height = '30px';
+
+				div3.style.width = '30px';
+
+				div3.style.visibility = 'hidden';
+
+				var div4 = document.createElement('div');
+
+				div4.style.border = '1px solid';
+
+				div4.style.position = 'absolute';
+
+				div4.style.left = '150px';
+
+				div4.style.top = '60px';
+
+				div4.style.backgroundColor = 'orange';
+
+				div4.style.height = '30px';
+
+				div4.style.width = '30px';
+
+				div4.style.visibility = 'hidden';
+
+				var box = document.getElementById('box');
+
+				box.appendChild(div1);
+
+				box.appendChild(div2);
+
+				box.appendChild(div3);
+
+				box.appendChild(div4);
+
+				var Lshape = [div1, div2, div3, div4];
+
+				var div1 = document.createElement('div');
+
+				div1.style.border = '1px solid';
+
+				div1.style.position = 'absolute';
+
+				div1.style.left = '120px';
+
+				div1.style.top = '0px';
+
+				div1.style.backgroundColor = 'blue';
+
+				div1.style.height = '30px';
+
+				div1.style.width = '30px';
+
+				div1.style.visibility = 'hidden';
+
+				var div2 = document.createElement('div');
+
+				div2.style.border = '1px solid';
+
+				div2.style.position = 'absolute';
+
+				div2.style.left = '120px';
+
+				div2.style.top = '30px';
+
+				div2.style.backgroundColor = 'blue';
+
+				div2.style.height = '30px';
+
+				div2.style.width = '30px';
+
+				div2.style.visibility = 'hidden';
+
+				var div3 = document.createElement('div');
+
+				div3.style.border = '1px solid';
+
+				div3.style.position = 'absolute';
+
+				div3.style.left = '120px';
+
+				div3.style.top = '60px';
+
+				div3.style.backgroundColor = 'blue';
+
+				div3.style.height = '30px';
+
+				div3.style.width = '30px';
+
+				div3.style.visibility = 'hidden';
+
+				var div4 = document.createElement('div');
+
+				div4.style.border = '1px solid';
+
+				div4.style.position = 'absolute';
+
+				div4.style.left = '90px';
+
+				div4.style.top = '60px';
+
+				div4.style.backgroundColor = 'blue';
+
+				div4.style.height = '30px';
+
+				div4.style.width = '30px';
+
+				div4.style.visibility = 'hidden';
+
+				var box = document.getElementById('box');
+
+				box.appendChild(div1);
+
+				box.appendChild(div2);
+
+				box.appendChild(div3);
+
+				box.appendChild(div4);
+
+				var Jshape = [div1, div2, div3, div4];
+
+				var div1 = document.createElement('div');
+
+				div1.style.border = '1px solid';
+
+				div1.style.position = 'absolute';
+
+				div1.style.left = '150px';
+
+				div1.style.top = '0px';
+
+				div1.style.backgroundColor = 'red';
+
+				div1.style.height = '30px';
+
+				div1.style.width = '30px';
+
+				div1.style.visibility = 'hidden';
+
+				var div2 = document.createElement('div');
+
+				div2.style.border = '1px solid';
+
+				div2.style.position = 'absolute';
+
+				div2.style.left = '120px';
+
+				div2.style.top = '0px';
+
+				div2.style.backgroundColor = 'red';
+
+				div2.style.height = '30px';
+
+				div2.style.width = '30px';
+
+				div2.style.visibility = 'hidden';
+
+				var div3 = document.createElement('div');
+
+				div3.style.border = '1px solid';
+
+				div3.style.position = 'absolute';
+
+				div3.style.left = '120px';
+
+				div3.style.top = '30px';
+
+				div3.style.backgroundColor = 'red';
+
+				div3.style.height = '30px';
+
+				div3.style.width = '30px';
+
+				div3.style.visibility = 'hidden';
+
+				var div4 = document.createElement('div');
+
+				div4.style.border = '1px solid';
+
+				div4.style.position = 'absolute';
+
+				div4.style.left = '90px';
+
+				div4.style.top = '30px';
+
+				div4.style.backgroundColor = 'red';
+
+				div4.style.height = '30px';
+
+				div4.style.width = '30px';
+
+				div4.style.visibility = 'hidden';
+
+				var box = document.getElementById('box');
+
+				box.appendChild(div1);
+
+				box.appendChild(div2);
+
+				box.appendChild(div3);
+
+				box.appendChild(div4);
+
+				var Sshape = [div1, div2, div3, div4];
+
+				var board = {};
+
+				var p, a;
+
+				var pieces = [
+					Sshape,
+					Tshape,
+					Zshape,
+					Lshape,
+					Ishape,
+					shape,
+					Jshape
+				];
+
+				var piece = pieces[Math.floor(Math.random() * 7)];
+                
+                var stop = function stop() {
+					clearInterval(a);
+					piece = pieces[Math.floor(Math.random() * 7)];
+					playTetris();
+				};
+
+				var checkCollide = function(piece) {
+					var isCrashed = false;
+					for (var i = 0; i < 4; i++) {
+						var xPos = parseInt(piece[i].style.left);
+						var yPos = parseInt(piece[i].style.top);
+						isCrashed = currentStatus.some(function(el) {
+							return el.y == yPos + 30;
+						});
+						if (isCrashed) {
+							break;
+						}
+					}
+					return isCrashed;
+				};
+				 
+                 moveShape();
+				function moveShape() {
+					a = setTimeout(moveShape, 300);
+
+					for (i = 0; i < 4; i++) {
+						piece[i].style.visibility = 'visible';
+
+						    piece[i].style.top =
+						 	parseInt(piece[i].style.top) + 30 + 'px';
+						var xPos = parseInt(piece[i].style.left);
+						var yPos = parseInt(piece[i].style.top);
+
+						/* if (checkCollide(xPos, yPos)) {
+						 	currentStatus.push({ x: xPos, y: yPos });
+						 	stop();
+						 } */
+						p = parseInt(piece[i].style.top);
+					}
+
+					if (p == 570 || checkCollide(piece)) {
+						console.log('touched bottom');
+						for (var i = 0; i < 4; i++) {
+							var xPos = parseInt(piece[i].style.left);
+							var yPos = parseInt(piece[i].style.top);
+							currentStatus.push({ x: xPos, y: yPos });
+                            
+                            
+						}
+						
+					    stop();
+					}
+
+					count = 0;
+					speed = 800;
+				}
+
+				
+                
+				var box = document.querySelector('#box');
+
+				window.addEventListener(
+					'keydown',
+
+					function(keyPressed) {
+						if (keyPressed.code == 'ArrowRight') {
+							if (!rightStop()) {
+								for (i = 0; i < piece.length; i++) {
+									console.log('>');
+
+									piece[i].style.left =
+										parseInt(piece[i].style.left) +
+										30 +
+										'px';
+								}
+							}
+						} else if (keyPressed.code == 'ArrowLeft') {
+							console.log('<');
+
+							if (!leftStop()) {
+								for (i = 0; i < piece.length; i++) {
+									piece[i].style.left =
+										parseInt(piece[i].style.left) -
+										30 +
+										'px';
+								}
+							}
+						} else if (keyPressed.code == 'ArrowDown') {
+							if (!downStop()) {
+								for (i = 0; i < piece.length; i++) {
+									piece[i].style.top =
+										parseInt(piece[i].style.top) +
+										30 +
+										'px';
+								}
+							}
+						}
+                        
+                                        
+                           else if(keyPressed.code == "ArrowUp"){
+                               
+                               
+                               for(i=0;i<piece.length;i++){
+                               console.log(parseInt(piece[i].style.left)+"px");
+                               //console.log("^");
+                                console.log(piece[i]);   
+                               
+                               
+                                    /*if(piece[i].style.backgroundColor=="green"){
+                                                      
+                                                       console.log("içeri girdi");
+                                                       var box = document.getElementById("box");
+                                                       
+                                                       var div1 = document.createElement("div");
+                                                       piece[i].style.left=parseInt(piece[i].style.left)+60+"px";
+                                                       piece[i].style.top=parseInt(piece[i].style.top)+0+"px";
+                                                       box.appendChild(piece[i]);
+                                                       
+                                                       var div2 = document.createElement("div");
+                                                       piece[i].style.left=parseInt(piece[i].style.left)+30+"px";
+                                                       piece[i].style.top=parseInt(piece[i].style.top)+30+"px";
+                                                       box.appendChild(piece[i]);
+                                                       
+                                                       var div3 = document.createElement("div");
+                                                       piece[i].style.left=parseInt(piece[i].style.left)+0+"px";
+                                                       piece[i].style.top=parseInt(piece[i].style.top)+0+"px";
+                                                       box.appendChild(piece[i]);
+                                                       
+                                                       var div4 = document.createElement("div");
+                                                       piece[i].style.left=parseInt(piece[i].style.left)-30+"px";
+                                                       piece[i].style.top=parseInt(piece[i].style.top)+30+"px";
+                                                       box.appendChild(piece[i]);
+                                                   
+                                    
+                                                   
+                                                       Zshape = [div1, div2, div3, div4];  
+                                                       
+                                                       
+                                     }*/
+                                    }
+                                   }
+					}
+				);
+
+				function rightStop() {
+					for (var i = 0; i < piece.length; i++) {
+						if (parseInt(piece[i].style.left) == 270) return true;
+					}
+
+					return false;
+				}
+
+				function downStop() {
+					for (var i = 0; i < piece.length; i++) {
+						if (parseInt(piece[i].style.top) == 570) return true;
+					}
+
+					return false;
+				}
+
+				function leftStop() {
+					for (var i = 0; i < piece.length; i++) {
+						if (parseInt(piece[i].style.left) == 0) return true;
+					}
+
+					return false;
+				}
+			}
+		</script>
